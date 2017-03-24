@@ -1,0 +1,29 @@
+{% extends 'shop/login_root.html/' %}
+{% load static %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block nav %}
+<ul class="nav navbar-nav navbar-right">
+    <li><a href="{% url 'login' %}">Login</a></li>
+</ul>
+
+<ul class="nav navbar-nav navbar-right">
+    <li><a href="{% url 'register' %}">Register</a></li>
+</ul>
+{% endblock %}
+
+{% block login_content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-4 col-md-5">
+            <form id='login' method='POST' action=''>{% csrf_token %}
+                {{form.as_p}}
+                <div class="col-md-5 col-md-offset-3">
+                <input type='submit' class='btn btn-primary' value='{{ title }}'/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

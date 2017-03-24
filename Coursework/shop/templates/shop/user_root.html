@@ -1,0 +1,48 @@
+{% extends 'shop/root.html/' %}
+{% load static %}
+<!doctype html>
+
+{% block stylesheet %}
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{% static '/css/shop-homepage.css'%}" rel="stylesheet">
+    <link href="{% static '/css/results.css'%}" rel="stylesheet">
+    <script src="{% static 'scripts/add.js'%}"></script>
+    <script src="{% static 'scripts/delete.js'%}"></script>
+    <script src="{% static 'scripts/minus.js'%}"></script>
+    <script src="{% static 'scripts/quantity.js'%}"></script>
+{% endblock %}
+
+{% block stylesheet2 %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Home</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{% url 'basket' %}">Basket</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+                <!-- <li>
+
+                </li> -->
+            </ul>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <main>
+        {% block user_content %}
+        {% endblock %}
+    </main>
+</div>
+</div>
+
+{% endblock %}
